@@ -66,18 +66,3 @@ document.addEventListener("DOMContentLoaded", function () {
     var audio = document.getElementById("background-music");
     audio.volume = 0.0000000001; // Set volume to 50%
 });
-
-const audio = document.getElementById('background-music');
-const volumeSlider = document.getElementById('volume-slider');
-const volumeControlContainer = document.getElementById('volume-control-container');
-const closeButton = document.getElementById('close-button');
-
-audio.volume = volumeSlider.value;
-
-volumeSlider.addEventListener('input', function () {
-    audio.volume = this.value;
-});
-
-closeButton.addEventListener('click', function () {
-    volumeControlContainer.style.display = 'none';
-});
