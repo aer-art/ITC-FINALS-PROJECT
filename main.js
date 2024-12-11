@@ -62,7 +62,3 @@ ScrollReveal().reveal(".offer__card", {
     interval: 500,
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    var audio = document.getElementById("background-music");
-    audio.volume = 0.0000000001; // Set volume to 50%
-});
