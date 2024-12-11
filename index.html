@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>L&J Suites - Home</title>
+</head>
+
+<body>
+     <!-- Background Music -->
+     <audio id="background-music" autoplay loop>
+        <source src="assets/background.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Volume Control -->
+    <div id="volume-control-container">
+        <label for="volume-slider">Volume</label>
+        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5">
+    </div>
+
+    <header class="header">
+        <nav>
+            <div class="nav__bar">
+                <div class="logo">
+                    <a href="#"><img src="assets/weblogo.png" alt="logo" /></a>
+                </div>
+                <div class="nav__menu__btn" id="menu-btn">
+                    <i class="ri-menu-line"></i>
+                </div>
+            </div>
+            <ul class="nav__links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="offer.html">Offers</a></li>
+                <li><a href="#client">About Us</a></li>
+            </ul>
+        </nav>
+        <div class="section__container header__container" id="home">
+            <h1>Experiencing Comfort with Luxury, Where Every Stay Feels Perfect</h1>
+            <p>
+                Indulge in elegance, unwind in comfort, and create unforgettable memories.
+            </p>
+            <div class="booking">
+                <form action="/" class="booking__form">
+                    <div class="booking__input">
+                        <label for="check-in">CHECK-IN</label>
+                        <input type="date" placeholder="Check-in" />
+                    </div>
+                    <div class="booking__input">
+                        <label for="check-out">CHECK-OUT</label>
+                        <input type="date" placeholder="Check-out" />
+                    </div>
+                    <div class="booking__input">
+                        <label for="guest">GUESTS</label>
+                        <input type="number" id="start" name="trip-start" />
+                    </div>
+                </form>
+                <div class="booking__btn">
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--Videos-->
+    <section class="section__container video-collage-container" id="video-collage">
+        <h2 class="section__header">L&J Suites Highlights</h2>
+        <p class="section__description">
+            Discover the perfect blend of luxury, relaxation, and adventure through our exclusive video collage.
+        </p>
+        <div class="masonry-grid">
+            <!-- Video Items -->
+            <div class="masonry-item small">
+                <video autoplay muted loop>
+                    <source src="assets/video_relaxation.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="overlay">
+                    <h3>Relaxation</h3>
+                    <p>Unwind in our serene settings.</p>
+                </div>
+            </div>
+            <div class="masonry-item medium">
+                <video autoplay muted loop>
+                    <source src="assets/video_gourmet.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="overlay">
+                    <h3>Gourmet Dining</h3>
+                    <p>Savor exquisite cuisine.</p>
+                </div>
+            </div>
+            <div class="masonry-item tall">
+                <video autoplay muted loop>
+                    <source src="assets/video_adventure.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="overlay">
+                    <h3>Adventure</h3>
+                    <p>Explore stunning landscapes.</p>
+                </div>
+            </div>
+            <div class="masonry-item wide">
+                <video autoplay muted loop>
+                    <source src="assets/video_wellness.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="overlay">
+                    <h3>Wellness</h3>
+                    <p>Rejuvenate your body and mind.</p>
+                </div>
+            </div>
+            <div class="masonry-item medium">
+                <video autoplay muted loop>
+                    <source src="assets/video_living.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="overlay">
+                    <h3>Luxury Living</h3>
+                    <p>Experience opulence.</p>
+                </div>
+            </div>
+            <div class="masonry-item small">
+                <video autoplay muted loop>
+                    <source src="assets/video_pool.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="overlay">
+                    <h3>Infinity Pool</h3>
+                    <p>Dive into luxury.</p>
+                </div>
+            </div>
+            <div class="masonry-item small">
+                <video autoplay muted loop>
+                    <source src="assets/video_spa.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="overlay">
+                    <h3>Spa</h3>
+                    <p>Relax and refresh.</p>
+                </div>
+            </div>
+            <div class="masonry-item tall">
+                <video autoplay muted loop>
+                    <source src="assets/video_fitness.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="overlay">
+                    <h3>Fitness</h3>
+                    <p>Stay active on vacation.</p>
+                </div>
+            </div>
+            <div class="masonry-item small">
+                <video autoplay muted loop>
+                    <source src="assets/video_beachside.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="overlay">
+                    <h3>Beachside</h3>
+                    <p>Enjoy scenic views.</p>
+                </div>
+            </div>
+            <div class="masonry-item wide">
+                <video autoplay muted loop>
+                    <source src="assets/video_nightlife.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="overlay">
+                    <h3>Nightlife</h3>
+                    <p>Unwind with style.</p>
+                </div>
+            </div>
+            <div class="masonry-item medium">
+                <video autoplay muted loop>
+                    <source src="assets/video_rooftopnahindikasiwalanaakomahanap.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="overlay">
+                    <h3>Rooftop Views</h3>
+                    <p>Enjoy breathtaking cityscapes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Services-->
+    <section class="section__container service__container" id="service">
+        <h2 class="section__header">Main Services</h2>
+        <p class="section__description">
+            L&J Suites' main services are designed to provide guests with an exceptional stay, offering luxury, comfort,
+            and
+            personalized experiences tailored to your needs. Whether it's through our world-class dining, concierge
+            services,
+            or relaxing spa treatments, we ensure every moment of your visit is unforgettable.
+
+            We are dedicated to meeting the needs of every guest, and below, you'll find an alphabetical guide to the
+            most popular services and amenities offered by our boutique hotel.
+        </p>
+        <div class="service__grid">
+            <div class="service__card">
+                <img src="assets/roomservice_services.png" alt="service" />
+                <div>
+                    <div>
+                        <h4>Room Service</h4>
+                        <p>
+                            Enjoy the convenience of having food, drinks, and snacks delivered directly to your room.
+                            Room service is available for breakfast, lunch, and dinner, offering a range of delicious
+                            options.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="service__card">
+                <img src="assets/concierge_services.png" alt="service" />
+                <div>
+                    <div>
+                        <h4>Concierge Services</h4>
+                        <p>
+                            Let our concierge team assist you with booking tours, arranging transportation, and
+                            making reservations for a seamless stay.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="service__card">
+                <img src="assets/housekeeping_services.png" alt="service" />
+                <div>
+                    <div>
+                        <h4>Housekeeping</h4>
+                        <p>
+                            Housekeeping ensures that rooms are kept clean and well-maintained during the stay,
+                            including fresh linens, replenished toiletries, and a tidy environment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="service__card">
+                <img src="assets/dining_services.png" alt="service" />
+                <div>
+                    <div>
+                        <h4>Dining Options</h4>
+                        <p>
+                            Guests can enjoy a meal at the on-site restaurant, offering a range of dining options from
+                            casual bites to fine dining, depending on the location.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="service__card">
+                <img src="assets/wellness&spa_services.png" alt="service" />
+                <div>
+                    <div>
+                        <h4>Wellness and Spa Services</h4>
+                        <p>
+                            Pamper yourself with rejuvenating spa treatments, fitness centers, and yoga classes.
+                            Relaxation and wellness await you.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="service__card">
+                <img src="assets/transportation_services.png" alt="service" />
+                <div>
+                    <div>
+                        <h4>Transportation Services</h4>
+                        <p>
+                            A shuttle service to and from the airport is available, offering a convenient and
+                            stress-free way to travel to and from the hotel.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="btn-more"><a href="service.html" style="color: white;">See More</a></button>
+        </div>
+    </section>
+
+    <!--Offers-->
+    <section class="section__container offer__container" id="offer">
+        <div class="offer__header">
+            <h2 class="section__header">Rooms Offered Details</h2>
+        </div>
+        <div class="offer__grid">
+            <div class="offer__card">
+                <img src="assets/single_room.png" alt="offer" />
+                <h4>Single Room</h4>
+                <p>Size: 20 m²</p>
+                <div>
+                    <span>₱2,750.00</span>
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </div>
+            </div>
+            <div class="offer__card">
+                <img src="assets/double_room.png" alt="offer" />
+                <h4>Double Room</h4>
+                <p>Size: 28 m²</p>
+                <div>
+                    <span>₱3,750.00</span>
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </div>
+            </div>
+            <div class="offer__card">
+                <img src="assets/triple_room.png" alt="offer" />
+                <h4>Triple Room</h4>
+                <p>Size: 35 m²</p>
+                <div>
+                    <span>₱5,000.00</span>
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="offer__grid">
+            <div class="offer__card">
+                <img src="assets/quad_room.png" alt="offer" />
+                <h4>Quad Room</h4>
+                <p>Size: 40 m²</p>
+                <div>
+                    <span>₱6,000.00</span>
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </div>
+            </div>
+            <div class="offer__card">
+                <img src="assets/queen_room.png" alt="offer" />
+                <h4>Queen Room</h4>
+                <p>Size: 25 m²</p>
+                <div>
+                    <span>₱3,000.00</span>
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </div>
+            </div>
+            <div class="offer__card">
+                <img src="assets/king_room.png" alt="offer" />
+                <h4>King Room</h4>
+                <p>Size: 30 m²</p>
+                <div>
+                    <span>₱4,000.00</span>
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="offer__grid">
+            <div class="offer__card">
+                <img src="assets/twin_room.png" alt="offer" />
+                <h4>Twin Room</h4>
+                <p>Size: 28 m²</p>
+                <div>
+                    <span>₱3,750.00</span>
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </div>
+            </div>
+            <div class="offer__card">
+                <img src="assets/suite_room.png" alt="offer" />
+                <h4>Suite</h4>
+                <p>Size: 60 m²</p>
+                <div>
+                    <span>₱12,500.00</span>
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </div>
+            </div>
+            <div class="offer__card">
+                <img src="assets/presidential.jpg" alt="offer" />
+                <h4>Presidential Suite</h4>
+                <p>Sizes: 150 m²</p>
+                <div>
+                    <span>₱40,000.00</span>
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="btn-more"><a href="offer.html" style="color: white;">See More</a></button>
+        </div>
+    </section>
+
+    <section class="section__container about__container" id="about">
+        <div class="about__image">
+            <img src="assets/about.png" alt="about" />
+        </div>
+        <div class="about__content">
+            <h2 class="section__header">Easy Way to Enjoy Your Stay</h2>
+            <p class="section__description">
+                Experience a seamless and relaxing stay with us, where comfort and convenience are at the heart of your
+                visit.
+            </p>
+            <ul>
+                <li>
+                    <span><i class="ri-checkbox-circle-line"></i></span>
+                    Easily explore all the hotel facilities, from dining options to wellness services, ensuring a
+                    stress-free and enjoyable experience.
+                </li>
+                <li>
+                    <span><i class="ri-checkbox-circle-line"></i></span>
+                    Enjoy a fast, simple booking process for your accommodation, ensuring that your stay is arranged
+                    with ease, all in one place.
+                </li>
+            </ul>
+            <div class="about__links">
+                <a href="#">
+                    <img src="assets/google-play.png" alt="google-play" />
+                </a>
+                <a href="#">
+                    <img src="assets/app-store.png" alt="app-store" />
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="team" id="client">
+        <div class="section__container client__container">
+            <h2 class="section__header">About Us</h2>
+            <p class="section__description">
+                Discover the people behind L&J Suites' website developers.
+            </p>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="team__card">
+                            <img src="assets/lance1.jpg" alt="client" />
+                            <h4>Lance S. Ocampo</h4>
+                            <p>BSCS 1-A</p>
+                            <div class="team__ratings">
+                                <span><i class="ri-star-fill"></i></span>
+                                <span><i class="ri-star-fill"></i></span>
+                                <span><i class="ri-star-fill"></i></span>
+                                <span><i class="ri-star-fill"></i></span>
+                                <span><i class="ri-star-fill"></i></span>
+                            </div>
+                            <p>
+                                "The roots of patience drink deeply from the springs of wisdom."
+                            </p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team__card">
+                            <img src="assets/juliana2.jpg" alt="client" />
+                            <h4>Juliana Kate L. Lacsina</h4>
+                            <p>BSCS 1-A</p>
+                            <div class="team__ratings">
+                                <span><i class="ri-star-fill"></i></span>
+                                <span><i class="ri-star-fill"></i></span>
+                                <span><i class="ri-star-fill"></i></span>
+                                <span><i class="ri-star-fill"></i></span>
+                                <span><i class="ri-star-fill"></i></span>
+                            </div>
+                            <p>
+                                "The map to happiness doesn’t have roads; it’s drawn in footprints."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="section__container footer__container">
+            <div class="footer__col">
+                <div class="logo">
+                    <a href="#"><img src="assets/weblogo.png" alt="logo" style="width: 105% !important;" /></a>
+                </div>
+                <p style="margin-top: 8px;">
+                    L&J Suites offers a luxurious and inviting retreat, blending sophisticated design with exceptional
+                    service.
+                    With a focus on comfort and style, we provide a range of top-tier amenities to ensure a memorable
+                    experience
+                    for every guest. Whether you're here for business or leisure, our attentive staff and world-class
+                    facilities
+                    will make your stay truly extraordinary.
+                </p>
+                <ul class="footer__socials">
+                    <li>
+                        <a href="#"><i class="ri-facebook-fill"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="ri-instagram-line"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="ri-youtube-line"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Quick Links</h4>
+                <ul class="footer__links">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="service.html">Services</a>
+                    </li>
+                    <li>
+                        <a href="offer.html">Offers</a>
+                    </li>
+                    <li>
+                        <a href="#client">About Us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Contact Us</h4>
+                <ul class="footer__links">
+                    <li>
+                        <a href="#">
+                            <span><i class="ri-phone-fill"></i></span> +63 9619379299
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span><i class="ri-record-mail-line"></i></span> contactus@lnjsuites.com
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span><i class="ri-map-pin-2-fill"></i></span> Manila, Philippines
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Book Now</h4>
+                <form action="/">
+                    <input type="text" placeholder="Enter your email" />
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer__bar">
+            Copyright © 2024 L&J Suites. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        const audio = document.getElementById('background-music');
+        const volumeSlider = document.getElementById('volume-slider');
+
+        audio.volume = volumeSlider.value;
+
+        volumeSlider.addEventListener('input', function() {
+            audio.volume = this.value;
+        });
+    </script>
+</body>
+
+</html>

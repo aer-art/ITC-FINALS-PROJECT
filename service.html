@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://cdn.jsdelivr/npm/bootstrap@5.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr/npm/bootstrap@5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <title>L&J Suites - Services</title>
+    <style>
+        .header-services {
+            background-image: linear-gradient(rgba(20, 7, 7, 0.7),
+                    rgba(7, 13, 26, 0.7)),
+                url(assets/header-services.jpg);
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .services-container {
+            max-width: var(--max-width);
+            margin: auto;
+            padding: 5rem 1rem;
+        }
+
+        .services-header {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        .services-description {
+            margin-top: 1rem;
+            margin-left: 100px;
+            margin-right: 100px;
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .services-grid {
+            margin-top: 4rem;
+            display: grid;
+            gap: 1rem;
+            place-self: center;
+        }
+
+        .services-card {
+            padding: 1rem;
+            display: flex;
+            gap: 1rem;
+            flex-direction: column;
+            border-radius: 2px;
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .services-card:hover {
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .services-card img {
+            max-width: 300px;
+            margin: auto;
+            border-radius: 2px;
+        }
+
+        .services-card>div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+        }
+
+        .services-card h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        .services-card p {
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        @media (width > 576px) {
+            .services-card {
+                flex-direction: row;
+            }
+
+            .services-card img {
+                max-width: 200px;
+            }
+        }
+
+        @media (width > 768px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Background Music -->
+    <audio id="background-music" autoplay loop>
+        <source src="assets/background.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Volume Control -->
+    <div id="volume-control-container">
+        <label for="volume-slider">Volume:</label>
+        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5">
+    </div>
+
+    <header class="header-services">
+        <nav>
+            <div class="nav__bar">
+                <div class="logo">
+                    <a href="#"><img src="assets/weblogo.png" alt="logo" /></a>
+                </div>
+                <div class="nav__menu__btn" id="menu-btn">
+                    <i class="ri-menu-line"></i>
+                </div>
+            </div>
+            <ul class="nav__links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="offer.html">Offers</a></li>
+                <li><a href="index.html">About Us</a></li>
+            </ul>
+        </nav>
+        <div class="section__container header__container" id="home">
+            <h1>Exceptional Services, Crafted for Your Comfort and Convenience.</h1>
+            <p>
+                Personalized services designed to enhance your stay, ensuring comfort, convenience, and satisfaction
+                every step of the way.
+            </p>
+            <div class="booking">
+                <form action="/" class="booking__form">
+                    <div class="booking__input">
+                        <label for="check-in">CHECK-IN</label>
+                        <input type="date" placeholder="Check-in" />
+                    </div>
+                    <div class="booking__input">
+                        <label for="check-out">CHECK-OUT</label>
+                        <input type="date" placeholder="Check-out" />
+                    </div>
+                    <div class="booking__input">
+                        <label for="guest">DATE</label>
+                        <input type="number" id="start" name="trip-start" />
+                    </div>
+                </form>
+                <div class="booking__btn">
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="services-container" id="services">
+        <h2 class="services-header">All Services</h2>
+        <p class="services-description">
+            Our five-star luxury hotel offers an unparalleled experience, where every service is designed to cater to
+            your every
+            need with exceptional attention to detail. From world-class dining and rejuvenating spa treatments to
+            personalized concierge
+            assistance and luxurious accommodations, we provide a wide range of amenities to ensure your stay is both
+            indulgent and
+            effortless. Whether you're relaxing by the pool, enjoying exclusive access to our executive lounges, or
+            experiencing the
+            finest in-room entertainment, we strive to make every moment of your stay memorable and extraordinary. Below
+            are the list of
+            services offered:
+        </p>
+        <div class="services-grid">
+            <div class="services-card">
+                <img src="assets/childcare_services.png" alt="services" />
+                <div>
+                    <div>
+                        <h4>Childcare Services</h4>
+                        <p>
+                            Ensure a fun and safe experience for your children with our professional babysitting and
+                            kids’ club
+                            programs. Supervised activities, games, and creative workshops keep young guests entertained
+                            while
+                            parents enjoy some well-deserved relaxation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="services-card">
+                <img src="assets/concierge_services.png" alt="services" />
+                <div>
+                    <div>
+                        <h4>Concierge Services</h4>
+                        <p>
+                            Enhance your stay by our concierge team's assistance with everything from booking local
+                            tours and
+                            securing reservations to providing expert recommendations and arranging transportation. Let
+                            us make your
+                            trip effortless and unforgettable.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="services-card">
+                <img src="assets/dining_services.png" alt="services" />
+                <div>
+                    <div>
+                        <h4>Dining Options</h4>
+                        <p>
+                            Explore a culinary journey with our diverse dining venues, including gourmet restaurants,
+                            casual cafés, a
+                            rooftop bar with stunning views, and an extensive buffet. Our menus feature local
+                            specialties and
+                            international favorites to satisfy every craving.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="services-card">
+                <img src="assets/events_services.png" alt="services" />
+                <div>
+                    <div>
+                        <h4>Event Hosting</h4>
+                        <p>
+                            Make your events extraordinary with our elegant banquet halls and state-of-the-art meeting
+                            rooms.
+                            Whether it’s a dream wedding, a business conference, or a private celebration, our
+                            experienced event
+                            planners will ensure every detail is perfect.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="services-card">
+                <img src="assets/lounge_services.png" alt="services" />
+                <div>
+                    <div>
+                        <h4>Exclusive Club Lounges</h4>
+                        <p>
+                            Escape to our VIP club lounges, offering a serene space to unwind or focus on work. Enjoy
+                            complimentary
+                            snacks, premium beverages, and personalized service in a luxurious setting.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="services-card">
+                <img src="assets/shopping_services.png" alt="services" />
+                <div>
+                    <div>
+                        <h4>Gift Shop and Boutique</h4>
+                        <p>
+                            Shop at our on-site boutique for unique souvenirs, luxury items, and travel essentials.
+                            Whether you need
+                            a last-minute gift or a special keepsake, you’ll find something memorable.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="services-card">
+                <img src="assets/housekeeping_services.png" alt="services" />
+                <div>
+                    <div>
+                        <h4>Housekeeping</h4>
+                        <p>
+                            Relax in a spotless and inviting room with our daily cleaning, laundry services, and
+                            thoughtful turndown
+                            service. We take pride in maintaining the highest standards of cleanliness and comfort.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="services-card">
+                <img src="assets/entertainment_services.png" alt="services" />
+                <div>
+                    <div>
+                        <h4>In-Room Entertainment</h4>
+                        <p>
+                            Elevate your downtime with access to premium TV channels, streaming platforms, and gaming
+                            consoles.
+                            Our in-room entertainment options are designed for your relaxation and enjoyment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="services-card">
+                <img src="assets/amenities_services.png" alt="services" />
+                <div>
+                    <div>
+                        <h4>Personalized Welcome Amenities</h4>
+                        <p>
+                            Start your stay with a warm and thoughtful welcome, including complimentary gifts like fruit
+                            baskets,
+                            champagne, or handwritten notes. Let us add a personal touch to your special occasions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="services-card">
+                <img src="assets/recreational_services.png" alt="services" />
+                <div>
+                    <div>
+                        <h4>Recreational Activities</h4>
+                        <p>
+                            Discover endless opportunities for fun and relaxation, from refreshing swims in the pool to
+                            guided
+                            tours and exciting sports. Guests of all ages will find something to enjoy during their
+                            stay.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="services-card">
+                <img src="assets/roomservice_services.png" alt="services" />
+                <div>
+                    <div>
+                        <h4>Room Service</h4>
+                        <p>
+                            Savor the convenience of freshly prepared meals, snacks, and beverages delivered directly to
+                            your room.
+                            Whether it’s breakfast in bed or a late-night snack, we’ve got you covered.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="services-card">
+                <img src="assets/sports_services.png" alt="services" />
+                <div>
+                    <div>
+                        <h4>Sports Court Access</h4>
+                        <p>
+                            Stay active with access to our state-of-the-art sports courts, perfect for recreational
+                            games or
+                            professional practice. Enjoy a variety of activities in a modern, well-equipped setting.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="services-card">
+                <img src="assets/valet_services.png" alt="services" />
+                <div>
+                    <div>
+                        <h4>Valet Parking</h4>
+                        <p>
+                            Enjoy stress-free parking with our professional valet team, who handle your vehicle with
+                            care.
+                            Relax knowing that your car is safe and readily accessible whenever you need it.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="services-card">
+                <img src="assets/wellness&spa_services.png" alt="services" />
+                <div>
+                    <div>
+                        <h4>Wellness and Spa Services</h4>
+                        <p>
+                            Rejuvenate your mind and body with luxurious spa treatments, from relaxing massages and
+                            facials to beauty
+                            therapies. Access our fitness centers and yoga classes to complete your wellness experience.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="section__container footer__container">
+            <div class="footer__col">
+                <div class="logo">
+                    <a href="#"><img src="assets/weblogo.png" alt="logo" style="width: 105% !important;" /></a>
+                </div>
+                <p>
+                    Our hotel offers a luxurious and inviting retreat, blending sophisticated design with exceptional
+                    service.
+                    With a focus on comfort and style, we provide a range of top-tier amenities to ensure a memorable
+                    experience
+                    for every guest. Whether you're here for business or leisure, our attentive staff and world-class
+                    facilities
+                    will make your stay truly extraordinary.
+                </p>
+                <ul class="footer__socials">
+                    <li>
+                        <a href="#"><i class="ri-facebook-fill"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="ri-instagram-line"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="ri-youtube-line"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Quick Links</h4>
+                <ul class="footer__links">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="service.html">Services</a>
+                    </li>
+                    <li>
+                        <a href="offer.html">Offers</a>
+                    </li>
+                    <li>
+                        <a href="index.html">About Us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Contact Us</h4>
+                <ul class="footer__links">
+                    <li>
+                        <a href="#">
+                            <span><i class="ri-phone-fill"></i></span> +63 9619379299
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span><i class="ri-record-mail-line"></i></span> info@flytravels
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span><i class="ri-map-pin-2-fill"></i></span> Manila, Philippines
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Book Now</h4>
+                <form action="/">
+                    <input type="text" placeholder="Enter your email" />
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer__bar">
+            Copyright © 2024 Web Design Mastery. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        const audio = document.getElementById('background-music');
+        const volumeSlider = document.getElementById('volume-slider');
+
+        audio.volume = volumeSlider.value;
+
+        volumeSlider.addEventListener('input', function() {
+            audio.volume = this.value;
+        });
+    </script>
+</body>
+
+</html>

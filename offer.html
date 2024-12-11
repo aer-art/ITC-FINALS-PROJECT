@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>L&J Suites - Offers</title>
+</head>
+<style>
+    .header-offers {
+        padding-top: 4rem;
+        background-image: linear-gradient(rgba(20, 7, 7, 0.7),
+                rgba(7, 13, 26, 0.7)),
+            url(assets/header-offer.jpg);
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .header-offers {
+        padding-top: 0;
+    }
+
+    .offers-container {
+        max-width: var(--max-width);
+        margin: auto;
+        padding: 5rem 1rem;
+    }
+
+    .offers-header {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        text-align: center;
+    }
+
+    .offers-description {
+        margin-top: 1rem;
+        margin-left: 100px;
+        margin-right: 100px;
+        color: var(--text-light);
+        text-align: center;
+    }
+
+    .offers-header {
+        gap: 2rem;
+        flex-direction: column;
+    }
+
+    .offers-header a {
+        color: var(--primary-color);
+        transition: 0.3s;
+    }
+
+    .offers-header a:hover {
+        color: var(--primary-color-dark);
+    }
+
+    .offers-grid {
+        margin-top: 4rem;
+        display: grid;
+        gap: 1rem;
+    }
+
+    .offers-card {
+        padding: 1rem;
+        border-radius: 2px;
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+    }
+
+    .offers-card:hover {
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .offers-card img {
+        margin-bottom: 1rem;
+        border-radius: 2px;
+        height: 550px;
+    }
+
+    .offers-card h4 {
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: var(--text-dark);
+    }
+
+    .offers-card p {
+        margin-bottom: 1rem;
+        color: var(--text-light);
+    }
+
+    .offers-card>div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .offers-card span {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--primary-color);
+    }
+
+    @media (width > 576px) {
+        .offers-grid {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .offers-header {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    @media (width > 768px) {
+        .offers-grid {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+</style>
+
+<body>
+     <!-- Background Music -->
+     <audio id="background-music" autoplay loop>
+        <source src="assets/background.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Volume Control -->
+    <div id="volume-control-container">
+        <label for="volume-slider">Volume</label>
+        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5">
+    </div>
+    
+    <header class="header-offers">
+        <nav>
+            <div class="nav__bar">
+                <div class="logo">
+                    <a href="#"><img src="assets/weblogo.png" alt="logo" /></a>
+                </div>
+                <div class="nav__menu__btn" id="menu-btn">
+                    <i class="ri-menu-line"></i>
+                </div>
+            </div>
+            <ul class="nav__links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="offer.html">Offers</a></li>
+                <li><a href="index.html">About Us</a></li>
+            </ul>
+        </nav>
+        <div class="section__container header__container" id="home">
+            <h1>The Perfect Escape-Find the Room that Feels Like Home</h1>
+            <p>
+                Discover comfort tailored to you with luxurious spaces designed for rest, relaxation, and cherished
+                experiences.
+            </p>
+            <div class="booking">
+                <form action="/" class="booking__form">
+                    <div class="booking__input">
+                        <label for="check-in">CHECK-IN</label>
+                        <input type="date" placeholder="Check-in" />
+                    </div>
+                    <div class="booking__input">
+                        <label for="check-out">CHECK-OUT</label>
+                        <input type="date" placeholder="Check-out" />
+                    </div>
+                    <div class="booking__input">
+                        <label for="guest">GUESTS</label>
+                        <input type="number" id="start" name="trip-start" />
+                    </div>
+                </form>
+                <div class="booking__btn">
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="offers-container" id="offers">
+        <div class="offers-header">
+            <h2 class="offers-header" style="text-align: center;">Rooms Offered Details</h2>
+        </div>
+        <div class="offers-grid">
+            <div class="offers-card">
+                <img src="assets/single_room.png" alt="offers" />
+                <h4>Single Room</h4>
+                <p>Perfect for solo travelers, this cozy room features a single bed and all essential amenities for a
+                    comfortable stay.
+                <p>Size: 20 m²
+                </p>
+                <div>
+                    <span>₱2,750.00</span>
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="offers-grid">
+            <div class="offers-card">
+                <img src="assets/double_room.png" alt="offers" />
+                <h4>Double Room</h4>
+                <p> Ideal for two guests, this room offers one or two beds with ample space and essential comforts.</p>
+                <p> Size: 28 m²</p>
+                <div>
+                    <span>₱3,750.00</span>
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="offers-grid">
+            <div class="offers-card">
+                <img src="assets/queen_room.png" alt="offers" />
+                <h4>Queen Room</h4>
+                <p>A comfortable and spacious room featuring a queen-sized bed, perfect for solo travelers or couples
+                    seeking
+                    extra comfort. Equipped with modern amenities for a relaxing stay.</p>
+                <p> Size: 25 m²</p>
+                <div>
+                    <span>₱3,000.00</span>
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="offers-grid">
+            <div class="offers-card">
+                <img src="assets/king_room.png" alt="offers" />
+                <h4>King Room</h4>
+                <p>Designed for ultimate relaxation, this room includes a luxurious king-sized bed and ample space,
+                    making it
+                    ideal for couples or guests who prefer a little extra room.</p>
+                <p> Size: 30 m²</p>
+                <div>
+                    <span>₱4,000.00</span>
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="offers-grid">
+            <div class="offers-card">
+                <img src="assets/twin_room.png" alt="offers" />
+                <h4>Twin Room</h4>
+                <p>Designed for guests traveling together, this room includes two single beds for a restful stay.</p>
+                <p> Size: 28 m²</p>
+                <div>
+                    <span>₱3,750.00</span>
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="offers-grid">
+            <div class="offers-card">
+                <img src="assets/triple_room.png" alt="offers" />
+                <h4>Triple Room</h4>
+                <p>Perfect for small groups, this room accommodates three guests with a mix of single and double beds.
+                </p>
+                <p> Size: 35 m²</p>
+                <div>
+                    <span>₱5,000.00</span>
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="offers-grid">
+            <div class="offers-card">
+                <img src="assets/quad_room.png" alt="offers" />
+                <h4>Quad Room</h4>
+                <p>Spacious and convenient, this room is ideal for families or groups of four, featuring two double
+                    beds.</p>
+                <p> Size: 40 m²</p>
+                <div>
+                    <span>₱6,000.00</span>
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="offers-grid">
+            <div class="offers-card">
+                <img src="assets/family_room.png" alt="offers" />
+                <h4>Family Room</h4>
+                <p>A spacious room designed to accommodate families, offering multiple beds and family-friendly
+                    amenities.</p>
+                <p> Size: 45 m²</p>
+                <div>
+                    <span>₱7,250.00</span>
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="offers-grid">
+            <div class="offers-card">
+                <img src="assets/executive_room.png" alt="offers" />
+                <h4>Executive Room</h4>
+                <p>Tailored for business travelers, this room includes a work desk, premium furnishings, and access to
+                    exclusive
+                    business facilities.</p>
+                <p> Size: 40 m²</p>
+                <div>
+                    <span>₱8,00.00</span>
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="offers-grid">
+            <div class="offers-card">
+                <img src="assets/jrsuite_room.png" alt="offers" />
+                <h4>Junior Suite</h4>
+                <p>A stylish and comfortable option with a combined living and sleeping area for added space and
+                    relaxation.</p>
+                <p> Size: 45 m²</p>
+                <div>
+                    <span>₱9,000.00</span>
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="offers-grid">
+            <div class="offers-card">
+                <img src="assets/suite_room.png" alt="offers" />
+                <h4>Suite</h4>
+                <p>Enjoy a separate living area and bedroom in this spacious suite, perfect for extended stays or added
+                    luxury.</p>
+                <p> Size: 60 m²</p>
+                <div>
+                    <span>₱12,500.00</span>
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="offers-grid">
+            <div class="offers-card">
+                <img src="assets/honeymoonsuite_room.png" alt="offers" />
+                <h4>Honeymoon Suite</h4>
+                <p>A romantic retreat for couples, featuring luxurious amenities like a king-sized bed, a Jacuzzi, and
+                    scenic views.</p>
+                <p> Size: 60 m²</p>
+                <div>
+                    <span>₱15,000.00</span>
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="offers-grid">
+            <div class="offers-card">
+                <img src="assets/penthousesuite_room.png" alt="offers" />
+                <h4>Penthouse Suite</h4>
+                <p>Located on the top floor, this suite offers breathtaking panoramic views, expansive living areas, and
+                    premium services.</p>
+                <p> Size: 100 m²</p>
+                <div>
+                    <span>₱25,000.00</span>
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="offers-grid">
+            <div class="offers-card">
+                <img src="assets/presidential.jpg" alt="offers" />
+                <h4>Presidential Suite</h4>
+                <p>The ultimate luxury experience, this suite boasts high-end amenities, multiple rooms, and exclusive
+                    privileges for
+                    the most discerning guests.</p>
+                <p> Size: 150 m²</p>
+                <div>
+                    <span>₱40,000.00</span>
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="section__container footer__container">
+            <div class="footer__col">
+                <div class="logo">
+                    <a href="#"><img src="assets/weblogo.png" alt="logo" style="width: 105% !important;" /></a>
+                </div>
+                <p>
+                    Our hotel offers a luxurious and inviting retreat, blending sophisticated design with exceptional
+                    service.
+                    With a focus on comfort and style, we provide a range of top-tier amenities to ensure a memorable
+                    experience
+                    for every guest. Whether you're here for business or leisure, our attentive staff and world-class
+                    facilities
+                    will make your stay truly extraordinary.
+                </p>
+                <ul class="footer__socials">
+                    <li>
+                        <a href="#"><i class="ri-facebook-fill"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="ri-instagram-line"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="ri-youtube-line"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Quick Links</h4>
+                <ul class="footer__links">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="service.html">Services</a>
+                    </li>
+                    <li>
+                        <a href="offer.html">Offers</a>
+                    </li>
+                    <li>
+                        <a href="index.html">About Us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Contact Us</h4>
+                <ul class="footer__links">
+                    <li>
+                        <a href="#">
+                            <span><i class="ri-phone-fill"></i></span> +63 9619379299
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span><i class="ri-record-mail-line"></i></span> info@flytravels
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span><i class="ri-map-pin-2-fill"></i></span> Manila, Philippines
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Book Now</h4>
+                <form action="/">
+                    <input type="text" placeholder="Enter your email" />
+                    <button class="btn"><a href="bookingform.html" style="color: white;">Book Now</a></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer__bar">
+            Copyright © 2024 Web Design Mastery. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        const audio = document.getElementById('background-music');
+        const volumeSlider = document.getElementById('volume-slider');
+
+        audio.volume = volumeSlider.value;
+
+        volumeSlider.addEventListener('input', function () {
+            audio.volume = this.value;
+        });
+    </script>
+</body>
+
+</html>
