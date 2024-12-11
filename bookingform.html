@@ -130,6 +130,22 @@
             overflow-y: auto;
         }
 
+        #close-button {
+            align-self: flex-end;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: -10px;
+            margin-right: -10px;
+        }
+
+        #close-button:hover {
+            color: #ffcc00;
+        }
+
         #volume-control-container label {
             color: #e0e0e0;
             font-size: 16px;
@@ -140,7 +156,6 @@
             width: 6px;
             height: 200px;
             writing-mode: bt-lr;
-            /* Vertical orientation */
             -webkit-appearance: slider-vertical;
             appearance: slider-vertical;
             background: #555;
@@ -184,9 +199,11 @@
 
     <!-- Volume Control -->
     <div id="volume-control-container">
+        <button id="close-button">&times;</button>
         <label for="volume-slider">Volume</label>
         <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5">
     </div>
+
 
     <header class="hero-header">
         <h1>Welcome to L&J Suites</h1>
@@ -298,13 +315,17 @@
     <script>
         const audio = document.getElementById('background-music');
         const volumeSlider = document.getElementById('volume-slider');
+        const volumeControlContainer = document.getElementById('volume-control-container');
+        const closeButton = document.getElementById('close-button');
 
-        // Set initial volume
         audio.volume = volumeSlider.value;
 
-        // Update volume when slider value changes
-        volumeSlider.addEventListener('input', function() {
+        volumeSlider.addEventListener('input', function () {
             audio.volume = this.value;
+        });
+
+        closeButton.addEventListener('click', function () {
+            volumeControlContainer.style.display = 'none';
         });
     </script>
 </body>

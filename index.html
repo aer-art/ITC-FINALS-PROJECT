@@ -12,17 +12,19 @@
 </head>
 
 <body>
-     <!-- Background Music -->
-     <audio id="background-music" autoplay loop>
+    <!-- Background Music -->
+    <audio id="background-music" autoplay loop>
         <source src="assets/background.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
     <!-- Volume Control -->
     <div id="volume-control-container">
+        <button id="close-button">&times;</button>
         <label for="volume-slider">Volume</label>
         <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5">
     </div>
+
 
     <header class="header">
         <nav>
@@ -543,11 +545,17 @@
     <script>
         const audio = document.getElementById('background-music');
         const volumeSlider = document.getElementById('volume-slider');
+        const volumeControlContainer = document.getElementById('volume-control-container');
+        const closeButton = document.getElementById('close-button');
 
         audio.volume = volumeSlider.value;
 
-        volumeSlider.addEventListener('input', function() {
+        volumeSlider.addEventListener('input', function () {
             audio.volume = this.value;
+        });
+
+        closeButton.addEventListener('click', function () {
+            volumeControlContainer.style.display = 'none';
         });
     </script>
 </body>

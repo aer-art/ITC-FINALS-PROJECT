@@ -777,6 +777,22 @@ nav {
     overflow-y: auto;
 }
 
+#close-button {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: -10px;
+    margin-right: -10px;
+}
+
+#close-button:hover {
+    color: #ffcc00;
+}
+
 #volume-control-container label {
     color: #e0e0e0;
     font-size: 16px;
